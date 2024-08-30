@@ -1,0 +1,15 @@
+# 도커 컴포즈 목적
+# 여러개의 도커 이미지를 만들어 도커 컨테이너를 동시해 생성
+# 도커 컨테이너 간(내부통신)의 통신을 용이하게 하기 위함
+#docker-comose 파일 작성을 위한 format 사용
+services:
+  java-api1:
+    build:
+      context: .
+      dockerfile: Dockerfile1
+    image: hello1:v1
+  java-api2:
+    build:
+      context: .
+      dockerfile: Dockerfile2
+    image: hello2:v1
